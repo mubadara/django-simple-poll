@@ -1,0 +1,19 @@
+{% extends 'polls/base.html' %}
+<head>{% block title_block %} <title>Résultats pour la question {{ question.id }} </title> {% endblock %}
+</head>
+    {% block body_block %}
+        <div class="container results">
+            <h2 class="results_title title is-2">{{ question.question_text }}</h2>
+
+            <ul>
+                {% for choice in question.choice_set.all %}
+                    <li class="poll_results">{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}
+                    </li>
+                {% endfor %}
+            </ul>
+            <div class="link">
+            <a href="{% url 'polls:detail' question.id %}" class="back_to_index">Voter à nouveau</a>
+            <a href="{% url 'polls:index' %}" class="back_to_index">Retour à la page d'accueil</a>
+            </div>
+        </div>
+{% endblock %}

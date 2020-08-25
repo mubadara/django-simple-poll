@@ -1,0 +1,21 @@
+{% extends 'polls/base.html' %}
+<head>
+    {% block title_block %} <title>Accueil</title> {% endblock %}
+</head>
+<body>
+{% block body_block %}
+<div class="container index-main">
+    <h2 class="title is-2 text-center index-title">Liste des sondages</h2>
+    {% if latest_question_list %}
+    <ul class="question">
+    {% for question in latest_question_list %}
+        <li class="poll-list"><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
+</div>
+{% endblock %}
+</body>
+</html>

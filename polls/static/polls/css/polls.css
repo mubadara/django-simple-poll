@@ -1,0 +1,73 @@
+body {
+  margin: 12vw;
+}
+
+.back_to_index {
+  text-decoration: underline;
+  font-style: italic;
+  font-size: 20px;
+}
+
+.poll-list {
+  padding: 10px;
+  text-align: center;
+}
+
+.poll-list a {
+  font-size: 30px;
+  color: green;
+  font-family: "Do Hyeon", sans-serif;
+}
+
+.index-title {
+  text-decoration: underline;
+  font-family: "Londrina Solid", cursive;
+}
+
+.detail-title {
+  font-family: "Londrina Solid", cursive;
+}
+
+.choice_form {
+  text-align: center;
+  color: green;
+  font-size: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.input_field {
+  display: flex;
+  padding-top: 15px;
+}
+
+.form_btn {
+  width: 100px;
+  height: 40px;
+  margin-bottom: 10px;
+}
+
+.form_radio_btn {
+  margin-left: 10px;
+}
+
+.results {
+  text-align: center;
+}
+
+.results_title {
+  font-family: "Londrina Solid", cursive;
+  margin-bottom: 10px;
+}
+
+.link {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  padding-top: 10px;
+}
+
+.poll_results {
+  font-size: 30px;
+  color: green;
+}

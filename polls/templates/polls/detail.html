@@ -1,0 +1,24 @@
+{% extends "polls/base.html" %}
+<head>
+{% block title_block %} <title> Question {{ question.id }} </title> {% endblock %}
+</head>
+<body>
+{% block body_block %}
+    <div class="container">
+        <h2 class="text-center title is-2 detail-title">{{ question.question_text }}</h2>
+            {% if error_message %}<p><strong>{{ error_message}}</strong></p>{% endif %}
+            
+            <form action="{% url 'polls:vote' question.id %}" method='post' class="choice_form">
+            {% csrf_token %}
+            {% for choice in question.choice_set.all %}
+            <div class="input_field">
+                <label for="choice{{ forloop.counter }}" class="choice_list">{{ choice.choice_text }}</label>
+                <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}" class="form_radio_btn">
+            </div>
+                {% endfor %}           
+                <input type="submit" value="Vote" class="button is-black form_btn">
+            </form>
+    </div> 
+    <a href="{% url 'polls:index' %}" class="back_to_index">Retour à la page d'accueil</a>
+{% endblock %}
+</body>

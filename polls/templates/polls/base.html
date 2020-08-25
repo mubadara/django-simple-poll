@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@900&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    {% block title_block %}<title></title>{% endblock %}
+    {% load django_simple_bulma %}
+    {% bulma %}
+    {% font_awesome %}
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'polls/css/polls.css' %}">
+</head>
+
+<html>
+    <div class="container">
+            <body>
+                {% block body_block %}{% endblock %}
+            </body>
+    </div>
+</html>
